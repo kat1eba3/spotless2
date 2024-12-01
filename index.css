@@ -113,14 +113,18 @@
     height: 100vh;
     overflow: hidden;
     z-index: -1; /* Ensures it stays behind other content */
+    display: flex;
+    justify-content: space-around; /* Adds spacing between images */
+    align-items: center; /* Centers images vertically */
 }
 
 .floating-image {
     position: absolute;
-    width: 300px; /* Set a fixed width */
-    height: 300px; /* Set a fixed height */
-    animation: float 10s infinite linear;
+    width: 400px; /* Adjusted size */
+    height: 400px; /* Adjusted size */
+    animation: float 80s infinite linear; /* Slower animation */
     z-index: -1; /* Ensure images are behind other content */
+    margin: 0 20px; /* Adds space between images */
 }
 
 /* Animation Keyframes */
@@ -128,10 +132,24 @@
     0% {
         transform: translate(0, 0);
     }
+    25% {
+        transform: translate(100px, -100px); /* Adjusts the diagonal movement */
+    }
     50% {
-        transform: translate(50px, -50px); /* Move diagonally */
+        transform: translate(200px, 0); /* Moves more horizontally */
+    }
+    75% {
+        transform: translate(100px, 100px); /* Returns diagonally */
     }
     100% {
-        transform: translate(-100px, 100px); /* Return to another diagonal */
+        transform: translate(0, 0); /* Resets to start */
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .floating-image {
+        width: 70px; /* Even smaller size for mobile */
+        height: 70px; /* Even smaller size for mobile */
     }
 }
