@@ -1,84 +1,170 @@
-/* Vertical menu container */
 .vertical-menu {
-    position: fixed; /* Stays fixed on the screen */
-    top: 0; /* Start from the top */
-    right: 0; /* Align to the right */
-    width: 200px; /* Adjust the width of the menu */
-    height: 100vh; /* Full height of the screen */
-    background-color: #ffffff; /* Background color */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #ffffff;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally within the menu */
-    justify-content: center; /* Center items vertically */
-    padding: 20px; /* Add spacing inside the menu */
-    box-sizing: border-box; /* Include padding in width/height calculation */
-    border-left: 2px solid #000; /* Border only on the left side */
-    position: right; /* For positioning the pseudo-element */
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    border-left: 2px solid #000;
+    z-index: 10;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
 }
 
-.vertical-menu::before {
-    content: '';
+/* Styling for the circles */
+.circle {
     position: absolute;
-    top: 50%; /* Position it vertically centered */
-    left: -10px; /* Adjust this value to move the circle to the border */
-    width: 20px; /* Diameter of the circle */
-    height: 20px; /* Diameter of the circle */
-    background-color: #000; /* Circle color */
-    border-radius: 50%; /* Makes it a circle */
-    transform: translateY(-50%); /* Adjusts vertical centering */
+    width: 30px;
+    height: 30px;
+    border: 2px solid #000; /* Black border */
+    border-radius: 50%; /* Make it circular */
+    background-color: #ffffff; /* White background */
+    left: -15px; /* Place circles to the left of the menu */
+    z-index: 11;
 }
 
-/* Logo styling */
-.logo {
-    width: 120px; /* Adjust the size of the logo */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 20px; /* Add spacing below the logo */
+.circle1 {
+    top: 20%; /* Adjust the percentage for desired vertical placement */
+    animation: moveUpDown 10s infinite linear;
+}
+
+/* Position the second circle */
+.circle2 {
+    top: 50%; /* Centered at the middle of the menu */
+    animation: moveUpDownReverse 10s infinite linear;
+}
+
+/* Animations for the first circle (moving up and out) */
+@keyframes moveUpDown {
+    0% {
+        top: -10%; /* Start above the screen */
+    }
+    50% {
+        top: 50%; /* Middle position */
+    }
+    100% {
+        top: 110%; /* Exit below the screen */
+    }
+}
+
+/* Animations for the second circle (moving down and out) */
+@keyframes moveUpDownReverse {
+    0% {
+        top: 110%; /* Start below the screen */
+    }
+    50% {
+        top: 50%; /* Middle position */
+    }
+    100% {
+        top: -10%; /* Exit above the screen */
+    }
 }
 
 /* Navigation styling */
 nav {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center the menu items vertically */
-    align-items: center; /* Center the items horizontally */
-    width: 100%; /* Ensure it matches the width of the menu */
+    align-items: center;
+    width: 100%;
 }
 
-/* List styling */
+/* Menu items */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 100%; /* Ensure links stretch full width */
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Add vertical spacing between items */
+    gap: 20px;
 }
 
-/* List item styling */
 nav li {
-    margin: 0; /* Remove any extra margins */
+    margin: 0;
+    font-family: 'Funnel Display', sans-serif;
+    width: 100%; /* Ensure full width for centering */
 }
 
-/* Link styling */
 nav a {
-    text-decoration: none; /* Remove underline from links */
-    color: #000; /* Set link color */
-    font-size: 18px; /* Set font size */
-    font-family: 'Funnel Display', sans-serif; /* Use your preferred font */
-    text-align: center; /* Center align text */
-    display: block; /* Make links clickable over their entire width */
-    padding: 10px 0; /* Add padding for better clickability */
-    border-radius: 5px; /* Optional: Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+    padding: 10px 0;
+    margin: 0; /* Ensure there is no unwanted margin */
+    display: flex; /* Flex container for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center; /* Ensures text within the link is centered */
 }
 
 nav a:hover {
-    background-color: #f0f0f0; /* Change background on hover */
+    background-color: #f0f0f0;
 }
 
-/* Main content spacing */
-main {
-    margin-right: 200px; /* Leave space for the menu */
-    padding: 20px;
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .vertical-menu {
+        width: 180px; /* Reduce width slightly for tablets */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .circle {
+        width: 25px; /* Adjust circle size */
+        height: 25px;
+    }
+
+    nav a {
+        font-size: 16px; /* Adjust font size */
+        padding: 8px 0; /* Adjust padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .vertical-menu {
+        width: 150px; /* Reduce width for smaller screens */
+        padding: 10px; /* Reduce padding */
+    }
+
+    .circle {
+        width: 20px; /* Reduce size of the circles */
+        height: 20px;
+    }
+
+    nav a {
+        font-size: 14px; /* Adjust font size */
+        padding: 6px 0; /* Adjust padding */
+    }
+
+    main {
+        margin-right: 150px; /* Adjust margin */
+        padding: 15px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .vertical-menu {
+        width: 120px; /* Further reduce width */
+        padding: 5px; /* Reduce padding */
+    }
+
+    .circle {
+        width: 15px; /* Further reduce size of the circles */
+        height: 15px;
+    }
+
+    nav a {
+        font-size: 12px; /* Further reduce font size */
+        padding: 5px 0; /* Adjust padding */
+    }
+
+    main {
+        margin-right: 120px; /* Adjust margin */
+        padding: 10px; /* Adjust padding */
+    }
 }
