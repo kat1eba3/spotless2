@@ -91,3 +91,16 @@
     font-size: 1.2em;
     line-height: 1.6;
 }
+
+.transition {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

@@ -37,26 +37,54 @@
             <img src="home_img/SPOTLESS_logoo.png" alt="Spotless Logo" class="logo">
         </div>
 
-        <div class="scattered-images">
-            <div class="scattered-image">
-                <img src="home_img/spotless_web_circle1.png" alt="Image 1">
-            </div>
-            <div class="scattered-image">
-                <img src="home_img/spotless_web_circle2.png" alt="Image 2">
-            </div>
-            <div class="scattered-image">
-                <img src="home_img/spotless_web_circle3.png" alt="Image 3">
-            </div>
-            <div class="scattered-image">
-                <img src="home_img/spotless_web_circle4.png" alt="Image 4">
-            </div>
-            <!-- Add more images as needed -->
+        <div class="centered-logo">
+            <img src="home_img/SPOTLESS_logoo.png" alt="Second Logo">
         </div>
         
+        <div class="scattered-images" id="imageContainer">
+            <img src="home_img/spotless_web_circle1.png" alt="Image 1" class="scattered-image img1">
+            <img src="home_img/spotless_web_circle2.png" alt="Image 2" class="scattered-image img2">
+            <img src="home_img/spotless_web_circle3.png" alt="Image 3" class="scattered-image img3">
+            <img src="home_img/spotless_web_circle4.png" alt="Image 4" class="scattered-image img4">
+        </div>
 
 </body>
 
 <script>
+document.querySelector('.centered-logo').addEventListener('click', function() {
+    const imageContainer = document.querySelector('.scattered-images');
+
+    if (imageContainer.classList.contains('active')) {
+        imageContainer.classList.remove('active');
+
+        // Reset images
+        const images = document.querySelectorAll('.scattered-image');
+        images.forEach(img => {
+            img.style.opacity = 0;
+            img.style.transform = 'translate(0, 0) rotate(0deg)';
+        });
+    } else {
+        imageContainer.classList.add('active');
+
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+
+        const images = document.querySelectorAll('.scattered-image');
+        images.forEach((img, index) => {
+            const randomX = Math.random() * (screenWidth - 150);
+            const randomY = Math.random() * (screenHeight - 150);
+            const randomThrowRotation = Math.random() * 360 - 180;
+
+            img.style.setProperty('--throw-rotation', `${randomThrowRotation}deg`);
+
+            setTimeout(() => {
+                img.style.opacity = 1;
+                img.style.transform = `translate(${randomX}px, ${randomY}px) rotate(0deg)`;
+            }, index * 200);
+        });
+    }
+});
+
 
 
 </script>
