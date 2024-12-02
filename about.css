@@ -57,6 +57,7 @@ section {
     justify-content: center;
     align-items: center;
     transition: background-color 1s ease;
+    z-index:20;
 }
 
 .circle-text {
@@ -244,19 +245,15 @@ nav a:hover {
 }
 
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Funnel Display', sans-serif;
-    overflow-x: hidden;
-}
-
 body, html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%; /* Ensure full height */
     font-family: 'Funnel Display', sans-serif;
 }
+
 
 .parallax-text {
     display: flex; /* Enables flexbox layout */
@@ -284,6 +281,11 @@ body, html {
 
 }
 
+.parallax-text {
+    position: relative; /* Required for transform to work */
+    will-change: transform; /* Performance optimization */
+}
+
 
 body, html {
     margin: 0;
@@ -292,3 +294,5 @@ body, html {
     overflow-y: auto;
     height: 100%; /* Add this to ensure full height */
 }
+
+

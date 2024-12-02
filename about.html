@@ -27,50 +27,65 @@
                 </ul>
             </nav>
         </div>
-
-<header>
     
         <div class="parallax-text">
             <h2>What is Spotless?</h2>
-            <p>Spotless examines the slowly fading presence of community spaces, exploring how this gradual loss disrupts our sense of connection and belonging. The goal for this project is to create an educational and communal experience for our audience, inspiring conversation about how we can preserve third spaces while adapting them to fit into the needs of our changing world.</p>
+            <p>Spotless examines the slowly fading presence of third spaces, exploring how this gradual loss disrupts our sense of connection and belonging. The goal for this project is to create an educational and communal experience for our audience, inspiring conversation about how we can preserve third spaces while adapting them to fit into the needs of our changing world.</p>
 
         </div>
+
+
+        <div class="circle-stack">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        
+
     
         <div class="parallax-text">
-            <h2>Think</h2>
+            <p>Many people have found solace and a sense of belonging in third spaces—those communal spots outside of home and work, such as cafes, libraries, parks, and community centers. These places have long been essential for socializing, unwinding, and nurturing connections. They offer an informal environment where people from different backgrounds can come together, engage in spontaneous conversations, collaborate on projects, or simply share moments of quiet reflection. The comfort found in these spaces goes beyond just physical proximity; it is a shared human experience that fosters a feeling of community.</p>
         </div>
 
         <div class="parallax-text">
-            <h2>Think</h2>
+            <p>However, recent years have seen significant changes that have impacted these beloved spaces. The rapid growth of digital platforms has shifted how we interact, making it easier than ever to connect online while diminishing face-to-face engagements. Alongside this shift, the rising cost of living has strained communities, making it harder for small, independent businesses that often serve as third places to thrive. This economic pressure has led to the dominance of corporately owned establishments, which often prioritize profit over community connection and can sometimes alter the character of these spaces or push out local and independent options altogether.            </p>
         </div>
 
         <div class="parallax-text">
-            <h2>Think</h2>
+            <p>As a result, there has been a gradual decline in not only the physical spaces themselves but also in the collective sense of community, belonging, and shared experiences that they once provided. People are spending less time in environments that foster natural interactions, and this loss has subtle but significant consequences on our well-being and social fabric. This project, Spotless, aims to shed light on the growing void left by these disappearing third spaces and inspire our audience to recognize their importance. By highlighting the profound impact these places have on our personal and communal lives, we hope to encourage people to seek out and support such spaces wherever possible. We aspire to reawaken a shared understanding that nurturing these spaces contributes to stronger, more vibrant communities, fostering connections that can withstand the pressures of modern life.</p>
         </div>
     
 
     </section>
 
 
-<script>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Listen for the scroll event on the window
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset;
 
-document.addEventListener('scroll', function() {
-    const scrollTop = window.pageYOffset;
+        // Loop through each .parallax-text container and apply the parallax effect
+        document.querySelectorAll('.parallax-text').forEach((textContainer, index) => {
+            // Adjust the speed factor to customize the parallax effect
+            const speed = (index + 1) * 0.3; // Example: Change the multiplier to control the effect
 
-    document.querySelectorAll('.parallax-text').forEach((textContainer, index) => {
-        // Adjust the parallax speed as needed
-        const speed = (index + 1) * 0.3; // Customize this speed for each section
-        const text = textContainer.querySelector('h2');
-        if (text) {
-            // Apply the translateY effect to create the parallax effect
-            text.style.transform = `translateY(${scrollTop * speed}px)`;
+            // Apply a translateY effect to the text container
+            textContainer.style.transform = `translateY(${scrollTop * speed}px)`;
+            textContainer.style.transition = 'transform 0.1s'; // Optional: smooth transition effect
+        });
+
+        // Parallax effect for the circle stack, if desired
+        const parallaxElement = document.querySelector('.circle-stack');
+        if (parallaxElement) {
+            parallaxElement.style.transform = `translateY(${scrollTop * 0.5}px)`;
+            parallaxElement.style.transition = 'transform 0.1s'; // Optional: smooth transition
         }
     });
 });
 
 
-   
-</script>
+    </script>
 
     
 </body>

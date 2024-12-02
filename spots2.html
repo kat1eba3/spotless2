@@ -30,58 +30,70 @@
     <div id="placesContainer"></div>
     <button onclick="filterFreePlaces()">Show Free Places</button>
 
+    <div class="place">
+        <div class="scrollable-text">
+            Long text that might get cut off in the box...
+        </div>
+    </div>
+
 </body>
 
 
 <script>
-        let places = []; // Declare a global variable to hold the data
+    let places = []; // Declare a global variable to hold the data
 
-        window.onload = function() {
-            fetch('places.json')
-                .then(response => response.json()) // Parse the JSON from the response
-                .then(data => {
-                    places = data; // Populate the global variable with the JSON data
-                    displayPlaces(places); // Call the function to display places
-                })
-                .catch(error => console.error('Error loading the JSON file:', error));
-        };
+    window.onload = function() {
+        fetch('places.json')
+            .then(response => response.json()) // Parse the JSON from the response
+            .then(data => {
+                places = data; // Populate the global variable with the JSON data
+                displayPlaces(places); // Call the function to display places
+            })
+            .catch(error => console.error('Error loading the JSON file:', error));
+    };
 
-        function displayPlaces(filteredPlaces) {
-            const container = document.getElementById('placesContainer');
-            container.innerHTML = ''; // Clear previous content
+    function displayPlaces(filteredPlaces) {
+    const container = document.getElementById('placesContainer');
+    container.innerHTML = ''; // Clear previous content
 
-            if (filteredPlaces.length === 0) {
-                container.innerHTML = '<p>No places found.</p>';
-                return;
-            }
+    if (filteredPlaces.length === 0) {
+        container.innerHTML = '<p>No places found.</p>';
+        return;
+    }
 
-            filteredPlaces.forEach(place => {
-                const placeElement = document.createElement('div');
-                placeElement.classList.add('place');
-                placeElement.innerHTML = `
-                    <h2><a href="${place.link}">${place.name}</a></h2>
-                    <p>Type: ${place.type}</p>
-                    <p>Address: ${place.address}</p>
-                    <p>Price: ${place.price}</p>
-                    <p>${place.description}</p>
-                `;
-                container.appendChild(placeElement);
-            });
-        }
+    filteredPlaces.forEach(place => {
+        const placeElement = document.createElement('div');
+        placeElement.classList.add('place');
 
-        function filterFreePlaces() {
-            // Log places to see the structure and ensure the price field is a string
-            console.log(places);
+        // Check if the website property is valid
+        const website = place.link ? place.link : '#';
+        placeElement.innerHTML = `
+            <a href="${website}" target="_blank" class="place-link">
+                <h2>${place.name}</h2>
+            </a>
+            <p><strong>Price:</strong> ${place.price}</p>
+            <p><strong>Type:</strong> ${place.type}</p>
+            <p><strong>Description:</strong> ${place.description}</p>
+        `;
 
-            // Filter for places where the price includes the word "free"
-            const freePlaces = places.filter(place => place.price && place.price.toLowerCase().includes('free'));
+        container.appendChild(placeElement);
+    });
+}
 
-            // Display the filtered places
-            displayPlaces(freePlaces);
-        }
 
-        // Add event listener to the button
-        document.getElementById('filterFreeButton').addEventListener('click', filterFreePlaces);
-    </script>
-    
+
+    function filterFreePlaces() {
+        // Log places to see the structure and ensure the price field is a string
+        console.log(places);
+
+        // Filter for places where the price includes the word "free"
+        const freePlaces = places.filter(place => place.price && place.price.toLowerCase().includes('free'));
+
+        // Display the filtered places
+        displayPlaces(freePlaces);
+    }
+
+    // Add event listener to the button
+    document.getElementById('filterFreeButton')?.addEventListener('click', filterFreePlaces);
+</script>
 </html>
