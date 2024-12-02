@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotless</title>
+    <link rel="stylesheet" href="spots2.css">
+    <link rel="stylesheet" href="https://use.typekit.net/hie8usn.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="vertical-menu">
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="spots.html">Spots</a></li>
+                    <li><a href="#section3">Misc</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="placesContainer"></div>
+    <button onclick="sortPlacesByPrice()">Sort by Price (Low to High)</button>
+
+    <script>
+        let places = []; // Declare a global variable to hold the data
+
+        window.onload = function() {
+            fetch('places.json')
+                .then(response => response.json()) // Parse the JSON from the response
+                .then(data => {
+                    places = data; // Populate the global variable with the JSON data
+                    displayPlaces(places); // Call the function to display places
+                })
+                .catch(error => console.error('Error loading the JSON file:', error));
+        };
+
+        function displayPlaces(filteredPlaces) {
+            const container = document.getElementById('placesContainer');
+            container.innerHTML = ''; // Clear previous content
+
+            if (filteredPlaces.length === 0) {
+                container.innerHTML = '<p>No places found.</p>';
+                return;
+            }
+
+            filteredPlaces.forEach(place => {
+                const placeElement = document.createElement('div');
+                placeElement.classList.add('place');
+                placeElement.innerHTML = `
+                    <h2><a href="${place.link}">${place.name}</a></h2>
+                    <p>Type: ${place.type}</p>
+                    <p>Address: ${place.address}</p>
+                    <p>Price: ${place.price}</p>
+                    <p>${place.description}</p>
+                `;
+                container.appendChild(placeElement);
+            });
+        }
+
+        function sortPlacesByPrice() {
+            function parsePrice(priceStr) {
+                const match = priceStr.match(/[\d]+/);
+                return match ? parseInt(match[0], 10) : Infinity;
+            }
+
+            places.sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
+            displayPlaces(places);
+        }
+
+        document.querySelector('button').addEventListener('click', sortPlacesByPrice);
+    </script>
+</body>
+</html>

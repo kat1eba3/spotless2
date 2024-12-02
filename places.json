@@ -1,0 +1,259 @@
+[
+    {
+        "name": "La Cabra Bakery",
+        "link": "https://us.lacabra.com/pages/east-village?showBanner=false&lastClicked=1733013175356",
+        "type": "Cafe",
+        "address": "152 2nd Ave, New York, NY 10003",
+        "price": "$10-20",
+        "description": "Coffeehouse offering sourdough bread, pastries, and brunch in a space with limited seating."
+    },
+    {
+        "name": "The Lost Draft",
+        "link": "https://www.thelostdraft.com/",
+        "type": "Cafe",
+        "address": "398 Broome St, New York, NY 10013",
+        "price": "$1-10",
+        "description": "Laid-back cafe offering a range of coffees and pastries, plus Wi-Fi."
+    },
+    {
+        "name": "Albertine ",
+        "link": "https://www.albertine.com/",
+        "type": "Bookstore",
+        "address": "972 5th Ave, New York, NY 10075",
+        "price": "Free (with optional purchase)",
+        "description": "Albertine Books is a bookstore in Manhattan, New York. Opened in 2014, it offers the largest collection in the United States of French-language books and translations from French into English. \n"
+    },
+    {
+        "name": "Strand bookstore ",
+        "link": "https://www.strandbooks.com/",
+        "type": "Bookstore",
+        "address": "828 Broadway, New York, NY 10003",
+        "price": "Free (with optional purchase)",
+        "description": "Strand Book Storee is a shop specializing in new, used & rare books from philosophy to finance, plus bookish gifts."
+    },
+    {
+        "name": "The Ripped Bodice",
+        "link": "https://www.therippedbodice.com/",
+        "type": "Bookstore",
+        "address": "218 5th Ave, Brooklyn, NY 11215",
+        "price": "Free (with optional purchase)",
+        "description": "Woman- and queer-owned bookstore specializing in romance novels, plus gifts."
+    },
+    {
+        "name": "Three Lives & Company",
+        "link": "http://threelives.com/",
+        "type": "Bookstore",
+        "address": "154 W 10th St, New York, NY 10014",
+        "price": "Free (with optional purchase)",
+        "description": "Snug neighborhood bookshop selling a well-curated selection of hardcovers & paperbacks since 1968."
+    },
+    {
+        "name": "Elizabeth Street Garden",
+        "link": "https://www.elizabethstreetgarden.com/",
+        "type": "Garden and Parks",
+        "address": "Elizabeth St, New York, NY 10012",
+        "price": "Free ",
+        "description": "The Elizabeth Street Garden is a one-acre community sculpture garden in the Nolita neighborhood of Manhattan"
+    },
+    {
+        "name": "6BC Botanical Garden",
+        "link": "6bcgarden.org",
+        "type": "Garden and Parks",
+        "address": "630 E 6th St, New York, NY 10009",
+        "price": "Free",
+        "description": "Compact botanical garden with hundreds of plants & flowers plus a small pond."
+    },
+    {
+        "name": "The High Line",
+        "link": "https://www.thehighline.org/",
+        "type": "Garden and Parks",
+        "address": "New York, NY 10011",
+        "price": "Free",
+        "description": "The High Line is a 1.45-mile-long elevated linear park, greenway, and rail trail created on a former New York Central Railroad spur on the west side of Manhattan in New York City."
+    },
+    {
+        "name": "McNally Jackson Books",
+        "link": "https://www.mcnallyjackson.com/",
+        "type": "Bookstore",
+        "address": "52 Prince St, New York, NY 10012",
+        "price": "Free (with optional purchase)",
+        "description": "An independent bookstore offering a curated selection of books and a café that promotes literary events and book signings."
+    },
+    {
+        "name": "Cafe Grumpy",
+        "link": "https://cafegrumpy.com/",
+        "type": "Cafe",
+        "address": "193 Meserole Ave, Brooklyn, NY 11222",
+        "price": "$3-8",
+        "description": "A cozy café known for its specialty coffee and laid-back vibe, perfect for a casual work session or catching up with friends."
+    },
+    {
+        "name": "Central Park",
+        "link": "https://www.centralparknyc.org/",
+        "type": "Garden and Parks",
+        "address": "New York, NY 10024",
+        "price": "Free",
+        "description": "A sprawling green oasis in the middle of the city ideal for relaxing, reading, or socializing."
+    },
+    {
+        "name": "Brooklyn Public Library",
+        "link": "https://www.bklynlibrary.org/",
+        "type": "Library",
+        "address": " 10 Grand Army Plaza, Brooklyn, NY 11238",
+        "price": "Free",
+        "description": "A place for reading, workshops, and community events."
+    },
+    {
+        "name": "The Whitney Museum of American Art",
+        "link": "https://whitney.org/",
+        "type": "Museum",
+        "address": "99 Gansevoort St, New York, NY 10014",
+        "price": "Entry Price Varies ($25 for adults)",
+        "description": "Offers art exhibits and special programs, providing a space for creative engagement and discussions."
+    },
+    {
+        "name": "Housing Works Bookstore",
+        "link": "https://www.housingworks.org/locations/bookstore-cafe",
+        "type": "Bookstore and Cafe",
+        "address": "26 Crosby St, New York, NY 10012",
+        "price": "Free (with optional purchase)",
+        "description": "Charity retailer featuring used books, CDs, and clothing, plus a cafe and special events."
+    },
+    {
+        "name": "The Morgan Library & Museum",
+        "link": "https://www.themorgan.org/",
+        "type": "Museum",
+        "address": " 225 Madison Ave, New York, NY 10016",
+        "price": "$20 (adults), discounts for students and seniors",
+        "description": "Originally the private library of financier Pierpont Morgan, this museum combines art, literature, and history, providing a quiet, inspiring place to explore and reflect."
+    },
+    {
+        "name": "The Tenement Museum",
+        "link": "https://www.tenement.org/",
+        "type": "Museum",
+        "address": "103 Orchard St, New York, NY 10002",
+        "price": "$30 (adults), discounts for students and seniors",
+        "description": "A museum dedicated to the immigrant experience in New York City, offering tours that tell the stories of past residents and the city’s evolving history."
+    },
+    {
+        "name": "Bowery Poetry Club",
+        "link": "https://www.bowerypoetry.com/",
+        "type": "Community Space",
+        "address": "308 Bowery, New York, NY 10012",
+        "price": "$5–$20 (varies by event)",
+        "description": " A hub for poets, musicians, and artists with open mics, performances, and art events that encourage creative expression and community participation."
+    },
+    {
+        "name": "The High Line Hotel",
+        "link": "https://thehighlinehotel.com/",
+        "type": "Hotel",
+        "address": "180 10th Ave, New York, NY 10011",
+        "price": "Free entry; café items range from $5–$20",
+        "description": "This historic hotel offers a cozy café and hosts a range of cultural events, including book readings, workshops, and live music."
+    },
+    {
+        "name": "DUMBO",
+        "link": "https://www.instagram.com/dumbo_brooklyn/?hl=en",
+        "type": "Neighborhood",
+        "address": "Brooklyn, NY 11201",
+        "price": " Free (shopping and dining costs vary)",
+        "description": "A waterfront district known for its artsy vibe, stunning views of Manhattan, and unique shops and restaurants, creating a perfect place for community interaction and creative events."
+    },
+    {
+        "name": "Billy Johnson Playground",
+        "link": "https://www.centralparknyc.org/locations/billy-johnson-playground",
+        "type": "Playground",
+        "address": "E 67th St, New York, NY 10022",
+        "price": "Free",
+        "description": "Landscaped area with rustic trails, a miniature stone bridge, a splash pool & a 45-ft granite slide."
+    },
+    {
+        "name": "Heckscher Playground"
+    },
+    {
+        "name": "Sunset Parks",
+        "link": "https://nycgovparks.org/parks/sunset-park",
+        "type": "Gardens and Parks",
+        "address": "7th Avenue &, 43rd St, Brooklyn, NY 11232",
+        "price": "Free",
+        "description": "Sunset Park is a 24.5-acre public park in the neighborhood of Sunset Park, Brooklyn, New York City, between 41st and 44th Streets and 5th and 7th Avenues. The modern-day park contains a playground, recreation center, and pool. "
+    },
+    {
+        "name": "Lotus Garden",
+        "link": "https://thelotusgarden.org/",
+        "type": "Gardens and Parks",
+        "address": "250 W 97th St, New York, NY 10025",
+        "price": "Free",
+        "description": "Community garden in New York"
+    },
+    {
+        "name": "Pier 45 at Hudson River Park",
+        "link": "https://hudsonriverpark.org/locations/pier-45/",
+        "type": "Pier",
+        "address": "Hudson River Greenway, New York, NY 10014",
+        "price": "Free",
+        "description": "850-ft. pier & surrounding green space, offering seasonal events, New Jersey vistas, shade & seats."
+    },
+    {
+        "name": "Usagi",
+        "link": "https://www.usaginy.com/",
+        "type": "Cafe and Bookstore and Art Gallery",
+        "address": "163 Plymouth St, Brooklyn, NY 11201",
+        "price": "$5-15",
+        "description": "Calm, Japanese-inspired cafe & exhibition space featuring an art gallery, bookstore & coffee bar."
+    },
+    {
+        "name": "The New York Public Library"
+    },
+    {
+        "name": "The Five Lamps"
+    },
+    {
+        "name": "The MET",
+        "link": "https://www.metmuseum.org/",
+        "type": "Museum",
+        "address": "1000 Fifth Avenue, New York, NY 10028",
+        "price": "Free for residents and students of NY State",
+        "description": "The Met is one of the world's largest and most comprehensive art museums, with over two million works spanning various historical periods and cultures, from ancient artifacts to contemporary art​"
+    },
+    {
+        "name": "Ryan's Daughter",
+        "link": "https://ryansdaughter.nyc/",
+        "type": "Bar",
+        "address": "350 E 85th St, New York, NY 10028",
+        "price": "$10-20",
+        "description": "Ryan's Daughter is an Upper East Side bar known for its cozy and inviting atmosphere. It's a popular spot among locals for sports viewing, social gatherings, and parties. The venue includes games, comfortable seating, and a vibrant vibe"
+    },
+    {
+        "name": "Hex and Co",
+        "link": "https://www.hexnyc.com/",
+        "type": "Board game cafe",
+        "address": "801 Broadway, New York, NY 10003",
+        "price": "$10-20",
+        "description": " Hex & Co is a popular board game café offering over 500 games, including classics like Catan and Ticket to Ride. It provides a lively space for both casual and serious gamers, complete with a café serving coffee, tea, pastries, and more. "
+    },
+    {
+        "name": "\nFord Foundation Center for Social Justice",
+        "link": "https://www.fordfoundation.org/",
+        "type": "Public Space",
+        "address": "320 E 43rd St, New York, NY 10017",
+        "price": "Free",
+        "description": "This space is dedicated to fostering social justice and community engagement. The Ford Foundation Center features a lush indoor garden, art gallery, and a variety of public programs and events. It is open to visitors who wish to experience its serene setting, promoting interaction with nature through its sensory garden and reflecting pool"
+    },
+    {
+        "name": "Conservatory Garden ",
+        "link": "https://www.centralparknyc.org/locations/conservatory-garden",
+        "type": "Garden and Parks",
+        "address": "Located between 104th and 106th Streets by Fifth Avenue, New York, NY 10029",
+        "price": "Free",
+        "description": "The Conservatory Garden is the only formal garden in Central Park, offering a serene, garden-like atmosphere perfect for peaceful walks or photography. It is divided into three distinct sections—English, French, and Italian gardens—each showcasing unique seasonal plants and designs. It’s popular for weddings and public events, emphasizing nature’s beauty within an urban landscape​\nMUSEUM VISITS: UNIQUE & UNUSUAL"
+    },
+    {
+        "name": "Wonderville",
+        "link": "https://www.wonderville.nyc/",
+        "type": "Bar and Arcade",
+        "address": "1186 Broadway, Brooklyn, NY 11221",
+        "price": "$10-20",
+        "description": "Offers an inclusive environment with 30+ custom-built arcade games, live music, and events such as comedy and drag shows."
+    }
+]

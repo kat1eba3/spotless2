@@ -1,4 +1,4 @@
-/* General Styles */
+/* menu bar */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -72,3 +72,5 @@ header p {
         grid-template-columns: 1fr; /* 1 column on small screens */
     }
 }
+
+/* menu bar end */
