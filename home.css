@@ -182,15 +182,10 @@ nav a:hover {
 }
 
 .logo {
-    width: 10vw; /* Width set relative to the viewport width */
+    width: 800vw; /* Width set relative to the viewport width */
     height: auto; /* Maintains aspect ratio */
-    max-width: 200px; /* Optional: prevents the logo from growing too large */
-    transition: transform 0.3s ease; /* Smooth scaling transition */
-}
-
-/* Hover effect */
-.logo:hover {
-    transform: scale(2.2); /* Increases the size by 10% */
+    max-width: 1000px; /* Optional: prevents the logo from growing too large */
+    opacity: 2%;
 }
 
 /* Add media queries to adjust the logo size for smaller screens */
@@ -205,6 +200,87 @@ nav a:hover {
     .logo {
         width: 20vw; /* Adjust size for mobile */
         max-width: 100px; /* Further limits size on small screens */
+    }
+}
+
+
+
+.circle-button {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 20;
+    font-size: 24px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+
+
+.scattered-images {
+    position: relative;
+    width: 100%; /* Full width of the screen */
+    height: auto; /* Height adjusts based on the number of images */
+    display: flex;
+    flex-direction: column; /* Arrange images vertically */
+    align-items: center; /* Horizontally center images */
+    justify-content: center; /* Ensure images are vertically centered in each section */
+    scroll-snap-type: y mandatory; /* Enables snapping for smooth scrolling */
+    overflow-y: scroll; /* Enables vertical scrolling */
+    z-index:8;
+}
+
+.scattered-image {
+    position: relative; /* Each image is positioned within its section */
+    width: 150px; /* Default image size */
+    height: auto; /* Maintain aspect ratio */
+    opacity: 0.8; /* Slight transparency */
+    margin: 0 auto; /* Center images horizontally */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer; /* Pointer cursor for interactivity */
+    scroll-snap-align: center; /* Ensures snapping centers the image */
+    height: 100vh; /* Each image takes full viewport height */
+    display: flex; /* Allows centering content within each section */
+    align-items: center;
+    justify-content: center;
+    z-index: 8;
+
+}
+
+.scattered-image img {
+    max-width: 300%; /* Scale images responsively */
+    max-height: 80%; /* Prevent images from overflowing viewport height */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateX(-60px); 
+
+}
+
+.scattered-image:hover img {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    opacity: 1; /* Fully opaque */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .scattered-image img {
+        max-width: 90%; /* Adjust size for smaller screens */
+        max-height: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .scattered-image img {
+        max-width: 80%; /* Further adjust size on small screens */
+        max-height: 60%;
     }
 }
 
