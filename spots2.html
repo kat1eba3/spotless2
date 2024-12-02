@@ -25,10 +25,15 @@
             </nav>
         </div>
     </header>
-    <div id="placesContainer"></div>
-    <button onclick="sortPlacesByPrice()">Sort by Price (Low to High)</button>
 
-    <script>
+
+    <div id="placesContainer"></div>
+    <button onclick="filterFreePlaces()">Show Free Places</button>
+
+</body>
+
+
+<script>
         let places = []; // Declare a global variable to hold the data
 
         window.onload = function() {
@@ -64,17 +69,19 @@
             });
         }
 
-        function sortPlacesByPrice() {
-            function parsePrice(priceStr) {
-                const match = priceStr.match(/[\d]+/);
-                return match ? parseInt(match[0], 10) : Infinity;
-            }
+        function filterFreePlaces() {
+            // Log places to see the structure and ensure the price field is a string
+            console.log(places);
 
-            places.sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
-            displayPlaces(places);
+            // Filter for places where the price includes the word "free"
+            const freePlaces = places.filter(place => place.price && place.price.toLowerCase().includes('free'));
+
+            // Display the filtered places
+            displayPlaces(freePlaces);
         }
 
-        document.querySelector('button').addEventListener('click', sortPlacesByPrice);
+        // Add event listener to the button
+        document.getElementById('filterFreeButton').addEventListener('click', filterFreePlaces);
     </script>
-</body>
+    
 </html>
