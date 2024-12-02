@@ -46,7 +46,16 @@
             <img src="home_img/spotless_web_circle2.png" alt="Image 2" class="scattered-image img2">
             <img src="home_img/spotless_web_circle3.png" alt="Image 3" class="scattered-image img3">
             <img src="home_img/spotless_web_circle4.png" alt="Image 4" class="scattered-image img4">
+            <img src="home_img/spotless_web_circle5.png" alt="Image 5" class="scattered-image img5">
+            <img src="home_img/spotless_web_circle6.png" alt="Image 6" class="scattered-image img6">
+            <img src="home_img/spotless_web_circle7.png" alt="Image 7" class="scattered-image img7">
+            <img src="home_img/spotless_web_circle8.png" alt="Image 8" class="scattered-image img8">
+            <img src="home_img/spotless_web_circle9.png" alt="Image 9" class="scattered-image img9">
+            <img src="home_img/spotless_web_circle10.png" alt="Image 10" class="scattered-image img10">
+            <img src="home_img/spotless_web_circle11.png" alt="Image 11" class="scattered-image img11">
+      
         </div>
+
 
 </body>
 
@@ -61,30 +70,32 @@ document.querySelector('.centered-logo').addEventListener('click', function() {
         const images = document.querySelectorAll('.scattered-image');
         images.forEach(img => {
             img.style.opacity = 0;
-            img.style.transform = 'translate(0, 0) rotate(0deg)';
+            img.style.transform = 'translate(0, 0)'; // No rotation
         });
     } else {
         imageContainer.classList.add('active');
 
-        const screenWidth = window.innerWidth;
-        const screenHeight = window.innerHeight;
+        // Get the dimensions of the image container
+        const container = document.querySelector('.scattered-images');
+        const containerWidth = container.clientWidth;
+        const containerHeight = container.clientHeight;
 
         const images = document.querySelectorAll('.scattered-image');
         images.forEach((img, index) => {
-            const randomX = Math.random() * (screenWidth - 150);
-            const randomY = Math.random() * (screenHeight - 150);
-            const randomThrowRotation = Math.random() * 360 - 180;
+            // Calculate the random position within the container's bounds
+            const maxX = containerWidth - img.clientWidth;
+            const maxY = containerHeight - img.clientHeight;
 
-            img.style.setProperty('--throw-rotation', `${randomThrowRotation}deg`);
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
 
             setTimeout(() => {
                 img.style.opacity = 1;
-                img.style.transform = `translate(${randomX}px, ${randomY}px) rotate(0deg)`;
+                img.style.transform = `translate(${randomX}px, ${randomY}px)`; // Position relative to container
             }, index * 200);
         });
     }
 });
-
 
 
 </script>

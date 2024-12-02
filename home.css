@@ -247,7 +247,7 @@ nav a:hover {
 
 
 .scattered-images {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100vw;
@@ -269,20 +269,19 @@ nav a:hover {
 
 .scattered-image {
     position: absolute;
-    width: 150px; /* Adjust size */
+    width: 150px; /* Adjust size as needed */
     height: auto;
     opacity: 0; /* Hidden initially */
-    transform: translate(0, 0) rotate(0deg); /* Start upright */
-    transition: opacity 0.3s ease, transform 0.8s cubic-bezier(0.33, 1, 0.68, 1);
-
-    /* Simulate the thrown rotation during motion */
-    will-change: transform;
+    transform: translate(0, 0); /* No rotation */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-/* Thrown effect: Use custom property for intermediate rotation */
-.scattered-image.active {
-    transform: translate(var(--random-x), var(--random-y)) rotate(var(--throw-rotation));
+/* When active, show images */
+.scattered-images.active .scattered-image {
+    opacity: 1; /* Make images visible */
 }
+
+
 
 
 
@@ -290,7 +289,14 @@ nav a:hover {
 .scattered-image.img1,
 .scattered-image.img2,
 .scattered-image.img3,
-.scattered-image.img4 {
+.scattered-image.img4,
+.scattered-image.img5,
+.scattered-image.img6,
+.scattered-image.img7,
+.scattered-image.img8,
+.scattered-image.img9,
+.scattered-image.img10,
+.scattered-image.img11 {
     /* Initial positions (can be adjusted) */
     top: 0;
     left: 0;
