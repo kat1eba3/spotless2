@@ -168,3 +168,43 @@ nav a:hover {
         padding: 10px; /* Adjust padding */
     }
 }
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensures the container takes the full width */
+    position: fixed; /* Keeps the logo fixed */
+    top: 50%; /* Centers vertically */
+    left: 45%; /* Centers horizontally */
+    transform: translate(-50%, -50%); /* Adjusts position */
+    z-index: 5; /* Adjust as needed */
+}
+
+.logo {
+    width: 10vw; /* Width set relative to the viewport width */
+    height: auto; /* Maintains aspect ratio */
+    max-width: 200px; /* Optional: prevents the logo from growing too large */
+    transition: transform 0.3s ease; /* Smooth scaling transition */
+}
+
+/* Hover effect */
+.logo:hover {
+    transform: scale(2.2); /* Increases the size by 10% */
+}
+
+/* Add media queries to adjust the logo size for smaller screens */
+@media (max-width: 768px) {
+    .logo {
+        width: 15vw; /* Adjust size for tablets */
+        max-width: 150px; /* Limits size on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 20vw; /* Adjust size for mobile */
+        max-width: 100px; /* Further limits size on small screens */
+    }
+}
+
