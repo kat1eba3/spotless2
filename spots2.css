@@ -183,6 +183,7 @@ nav a:hover {
     overflow: hidden;
     text-align: center;
     border-radius: 0;
+    margin-top: 60px;
 }
 
 
@@ -221,4 +222,45 @@ nav a:hover {
     white-space: nowrap;
     overflow-x: auto;
     width: 100%; /* Adjust as needed */
+}
+
+
+#filterFreeButton {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 100px; /* Set a width */
+    height: 100px; /* Set the same height to make it circular */
+    padding: 0; /* Remove padding to keep the shape */
+    background-color: black; /* Customize the button color */
+    color: white; /* Text color */
+    border: none;
+    border-radius: 50%; /* Make it circular */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: flex; /* Use flex to center the content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    z-index: 1000; /* Ensure it stays above other elements */
+    animation: rotateButton 3s linear infinite; /* Add rotation animation */
+}
+
+#filterFreeButton:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+
+.free-place {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+
+/* Keyframe for rotation */
+@keyframes rotateButton {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

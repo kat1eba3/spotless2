@@ -28,13 +28,9 @@
 
 
     <div id="placesContainer"></div>
-    <button onclick="filterFreePlaces()">Show Free Places</button>
 
-    <div class="place">
-        <div class="scrollable-text">
-            Long text that might get cut off in the box...
-        </div>
-    </div>
+    <button id="filterFreeButton" onclick="showFreePlaces()">Show Free Places</button>
+
 
 </body>
 
@@ -65,6 +61,11 @@
         const placeElement = document.createElement('div');
         placeElement.classList.add('place');
 
+        // Check if the place is free and add the 'free' class
+        if (place.price && place.price.toLowerCase().includes('free')) {
+            placeElement.classList.add('free'); // Add this class for styling
+        }
+
         // Check if the website property is valid
         const website = place.link ? place.link : '#';
         placeElement.innerHTML = `
@@ -80,20 +81,24 @@
     });
 }
 
+function showFreePlaces() {
+    // Get all elements with the class 'place'
+    const places = document.querySelectorAll('.place');
+
+    places.forEach(place => {
+        // Check if the place has the 'free' class
+        if (place.classList.contains('free')) {
+            place.classList.add('free-place'); // Apply the styling class
+
+            // Also, make sure the <h2> element inside this place is styled correctly
+            const placeName = place.querySelector('h2');
+            if (placeName) {
+                placeName.style.color = '#fff'; // Set the text color to white
+            }
+        }
+    });
+}
 
 
-    function filterFreePlaces() {
-        // Log places to see the structure and ensure the price field is a string
-        console.log(places);
-
-        // Filter for places where the price includes the word "free"
-        const freePlaces = places.filter(place => place.price && place.price.toLowerCase().includes('free'));
-
-        // Display the filtered places
-        displayPlaces(freePlaces);
-    }
-
-    // Add event listener to the button
-    document.getElementById('filterFreeButton')?.addEventListener('click', filterFreePlaces);
 </script>
 </html>
