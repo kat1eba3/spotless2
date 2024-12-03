@@ -29,7 +29,7 @@
 
     <div id="placesContainer"></div>
 
-    <button id="filterFreeButton" onclick="showFreePlaces()">Show Free Places</button>
+<button id="filterFreeButton" onclick="toggleFreePlaces()">Show Free Places</button>
 
 
 </body>
@@ -66,6 +66,16 @@
             placeElement.classList.add('free'); // Add this class for styling
         }
 
+        const linkElement = document.createElement('a');
+        linkElement.href = place.link ? place.link : '#';
+        linkElement.target = '_blank';
+        linkElement.classList.add('place-link');
+
+        placeElement.addEventListener('click', function() {
+            window.open(place.link ? place.link : '#', '_blank');
+        });
+        
+    
         // Check if the website property is valid
         const website = place.link ? place.link : '#';
         placeElement.innerHTML = `
@@ -98,6 +108,61 @@ function showFreePlaces() {
         }
     });
 }
+
+function toggleFreePlaces() {
+    const placesContainer = document.getElementById('placesContainer');
+    const places = document.querySelectorAll('.place');
+    const showFree = Array.from(places).some(place => place.classList.contains('free') && !place.classList.contains('free-place'));
+
+    if (showFree) {
+        showFreePlaces();
+    } else {
+        hideFreePlaces();
+    }
+}
+
+let isShowingFree = false; // Variable to keep track of the current state
+
+function showFreePlaces() {
+    const places = document.querySelectorAll('.place');
+
+    places.forEach(place => {
+        if (place.classList.contains('free')) {
+            place.classList.add('free-place'); // Apply the styling class
+            const placeName = place.querySelector('h2');
+            if (placeName) {
+                placeName.style.color = '#fff'; // Set the text color to white
+            }
+        }
+    });
+
+    document.getElementById('filterFreeButton').textContent = 'Show All Places'; // Update button text
+    isShowingFree = true; // Set the state to true
+}
+
+function hideFreePlaces() {
+    const places = document.querySelectorAll('.place');
+
+    places.forEach(place => {
+        place.classList.remove('free-place'); // Remove the styling class
+        const placeName = place.querySelector('h2');
+        if (placeName) {
+            placeName.style.color = ''; // Reset the text color
+        }
+    });
+
+    document.getElementById('filterFreeButton').textContent = 'Show Free Places'; // Update button text
+    isShowingFree = false; // Set the state to false
+}
+
+function toggleFreePlaces() {
+    if (isShowingFree) {
+        hideFreePlaces();
+    } else {
+        showFreePlaces();
+    }
+}
+
 
 
 </script>

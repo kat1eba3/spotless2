@@ -174,7 +174,7 @@ nav a:hover {
     align-items: center;
     justify-content: center; /* Centers content vertically */
     border: 2px solid #333;
-    border-radius: 10px;
+    border-radius: 0px; /* Initial border radius */
     width: 250px;
     height: 250px;
     margin: 10px;
@@ -182,10 +182,14 @@ nav a:hover {
     background-color: #f9f9f9;
     overflow: hidden;
     text-align: center;
-    border-radius: 0;
-    margin-top: 60px;
+    transition: border-radius 0.3s ease; /* Smooth transition */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+
 }
 
+.place:hover {
+    border-radius: 50%; /* Change to a circle on hover */
+}
 
 .place h2 {
     font-size: 1.2rem; /* Adjust text size */
@@ -213,9 +217,12 @@ nav a:hover {
 
 #placesContainer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px; /* Adjust this value to control both row and column gaps */
-    padding: 10px;
+    grid-template-columns: repeat(3, 1fr); /* Three columns, equal width */
+    row-gap: 5px; /* Space between rows */
+    column-gap: 2px !important;
+    padding: 100px;
+    margin-left: -60px; /* Adjust this value as needed */
+
 }
 
 .scrollable-text {
@@ -242,6 +249,11 @@ nav a:hover {
     justify-content: center; /* Center horizontally */
     z-index: 1000; /* Ensure it stays above other elements */
     animation: rotateButton 3s linear infinite; /* Add rotation animation */
+    font-family: 'Funnel Display', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+
 }
 
 #filterFreeButton:hover {
@@ -252,6 +264,8 @@ nav a:hover {
 .free-place {
     background-color: #000; /* Black background */
     color: #fff; /* White text */
+
+
 }
 
 

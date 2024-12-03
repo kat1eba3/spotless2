@@ -306,3 +306,12 @@ nav a:hover {
 .scattered-images.active .scattered-image {
     opacity: 1;
 }
+
+
+/* Responsive rules */
+@media (max-width: 768px) {
+  .container {
+    border-width: 1px; /* Adjust border size for smaller screens */
+  }
+}
+
