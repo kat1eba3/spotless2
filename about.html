@@ -29,6 +29,7 @@
         </div>
     
         <div class="parallax-text">
+
             <h2>What is Spotless?</h2>
             <p>Spotless examines the slowly fading presence of third spaces, exploring how this gradual loss disrupts our sense of connection and belonging. The goal for this project is to create an educational and communal experience for our audience, inspiring conversation about how we can preserve third spaces while adapting them to fit into the needs of our changing world.</p>
 
@@ -55,7 +56,6 @@
             <p>As a result, there has been a gradual decline in not only the physical spaces themselves but also in the collective sense of community, belonging, and shared experiences that they once provided. People are spending less time in environments that foster natural interactions, and this loss has subtle but significant consequences on our well-being and social fabric. This project, Spotless, aims to shed light on the growing void left by these disappearing third spaces and inspire our audience to recognize their importance. By highlighting the profound impact these places have on our personal and communal lives, we hope to encourage people to seek out and support such spaces wherever possible. We aspire to reawaken a shared understanding that nurturing these spaces contributes to stronger, more vibrant communities, fostering connections that can withstand the pressures of modern life.</p>
         </div>
     
-        <img src="/stories_img/spotless_bg1.png" alt="Description of the image">
 
 
     </section>
@@ -83,6 +83,37 @@ document.addEventListener('DOMContentLoaded', () => {
             parallaxElement.style.transform = `translateY(${scrollTop * 0.5}px)`;
             parallaxElement.style.transition = 'transform 0.1s'; // Optional: smooth transition
         }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset;
+        const sections = document.querySelectorAll('.parallax-text');
+
+        sections.forEach((section, index) => {
+            // Calculate the scroll position to trigger the fade effect
+            const sectionOffset = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const fadeInPoint = sectionOffset - window.innerHeight;
+            const fadeOutPoint = sectionOffset + sectionHeight;
+
+            // Get the image within the section
+            const image = section.querySelector('.parallax-bg');
+
+            if (scrollTop >= fadeInPoint && scrollTop <= fadeOutPoint) {
+                // Calculate the opacity based on scroll position
+                const opacity = ((scrollTop - fadeInPoint) / (fadeOutPoint - fadeInPoint)).toFixed(2);
+                image.style.opacity = opacity;
+            } else {
+                image.style.opacity = 0; // Reset opacity if not in range
+            }
+
+            // Apply the parallax effect
+            const speed = (index + 1) * 0.3;
+            section.style.transform = `translateY(${scrollTop * speed}px)`;
+            section.style.transition = 'transform 0.1s'; // Optional: smooth transition effect
+        });
     });
 });
 
