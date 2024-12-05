@@ -279,3 +279,12 @@ nav a:hover {
         transform: rotate(360deg);
     }
 }
+@media (max-width: 768px) {
+    #placesContainer {
+        width: 100%; /* Full width of the screen */
+        padding: 0 10px; /* Adjust padding to avoid overflow */
+        margin: 0 auto; /* Center the container */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        box-sizing: border-box; /* Include padding in width */
+    }
+}
